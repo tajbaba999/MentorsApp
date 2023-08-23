@@ -1,32 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="207dp"
-        android:layout_height="63dp"
-        android:text="Home"
-        android:textSize="40dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3" />
 
-    <TextView
-        android:id="@+id/mail"
-        android:layout_width="207dp"
-        android:layout_height="63dp"
-        android:text="Mail id user "
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.447" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="406dp"
+        android:layout_height="248dp"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical"
+        android:background="@drawable/wave_blue1"
+
+        >
+        <TextView
+            android:layout_marginTop="50dp"
+            android:id="@+id/txDesg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:text="Desg"
+            android:textColor="@color/black"
+            android:textSize="30dp"
+            android:textStyle="italic" />
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:textSize="30dp"
+            android:textStyle="italic"
+            android:textColor="@color/white"
+            android:layout_marginLeft="40dp"/>
+
+        <TextView
+            android:id="@+id/txMail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+            android:text="Mailid"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:textStyle="italic" />
+
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:id="@+id/linearLayout2"
+        android:layout_width="415dp"
+        android:layout_height="457dp"
+        android:layout_below="@id/linearLayout1"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:background="@color/grey"
+        tools:ignore="MissingClass">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/resultsRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+        />
+
+
+    </LinearLayout>
+
+</RelativeLayout>

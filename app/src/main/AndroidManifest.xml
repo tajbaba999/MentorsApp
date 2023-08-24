@@ -12,9 +12,6 @@
         android:theme="@style/Theme.MentorsApp"
         tools:targetApi="31">
         <activity
-            android:name=".card_view"
-            android:exported="false" />
-        <activity
             android:name=".Regestration"
             android:exported="false" />
         <activity

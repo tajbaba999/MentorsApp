@@ -15,17 +15,6 @@ import retrofit2.create
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
     lateinit var firebaseAuth: FirebaseAuth
-
-    val api : ApiService by lazy {
-        val refrofit = Retrofit.Builder()
-            .baseUrl("https://mentor-student-umum.onrender.com/")
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-
-        refrofit.create(ApiService::class.java)
-    }
-
-    val studentAdapter = MentorAdapter()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -36,13 +25,6 @@ class MainActivity : AppCompatActivity() {
 //            binding.mail.text = user.email.toString()
 //        }
 
-        val mentmail = user?.email.toString()
-
-        binding.resultsRecyclerView.layoutManager = LinearLayoutManager(this)
-        binding.resultsRecyclerView.adapter = MentorAdapter
-
 
     }
-
-    fun onSe
 }

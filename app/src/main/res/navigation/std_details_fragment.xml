@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/std_details_fragment"
+    app:startDestination="@id/mentor_details_fragment">
+
+    <fragment
+        android:id="@+id/mentor_details_fragment"
+        android:name="com.example.mentorsapp.mentor_details_fragment"
+        android:label="fragment_mentor_details_fragment"
+        tools:layout="@layout/fragment_mentor_details_fragment" >
+        <action
+            android:id="@+id/action_mentor_details_fragment_to_student_details"
+            app:destination="@id/student_details" />
+    </fragment>
+    <fragment
+        android:id="@+id/student_details"
+        android:name="com.example.mentorsapp.student_details"
+        android:label="fragment_student_details"
+        tools:layout="@layout/fragment_student_details" />
+</navigation>

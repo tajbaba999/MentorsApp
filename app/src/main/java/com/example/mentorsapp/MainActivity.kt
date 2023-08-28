@@ -3,6 +3,7 @@ package com.example.mentorsapp
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.bumptech.glide.Glide
 import com.example.mentorsapp.databinding.ActivityMainBinding
 import com.example.mentorsapp.databinding.ActivityRegestrationBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -24,6 +25,15 @@ class MainActivity : AppCompatActivity() {
 //        if (user != null) {
 //            binding.mail.text = user.email.toString()
 //        }
+
+//        val backbtn = binding.backbtnimg
+//        backbtn.setOnClickListener {
+//                onBackPressed()
+//        }
+
+        val url = ""
+        val  imgeViewproile = binding.imageView
+        Glide.with(this).load(url).circleCrop().fitCenter().into(imgeViewproile)
 
 
     }

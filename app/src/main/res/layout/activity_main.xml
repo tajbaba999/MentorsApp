@@ -1,74 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-
-
-
     <LinearLayout
-        android:id="@+id/linearLayout1"
-        android:layout_width="406dp"
-        android:layout_height="248dp"
-        android:layout_alignParentTop="true"
-        android:orientation="vertical"
-        android:background="@drawable/wave_blue1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        >
-        <TextView
-            android:layout_marginTop="50dp"
-            android:id="@+id/txDesg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
-            android:text="Desg"
-            android:textColor="@color/black"
-            android:textSize="30dp"
-            android:textStyle="italic" />
-        <TextView
-            android:id="@+id/tvName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Name"
-            android:textSize="30dp"
-            android:textStyle="italic"
-            android:textColor="@color/white"
-            android:layout_marginLeft="40dp"/>
-
-        <TextView
-            android:id="@+id/txMail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
-            android:text="Mailid"
-            android:textColor="@color/white"
-            android:textSize="30dp"
-            android:textStyle="italic" />
-
-    </LinearLayout>
-
-    <LinearLayout
-
-        android:id="@+id/linearLayout2"
-        android:layout_width="415dp"
-        android:layout_height="457dp"
-        android:layout_below="@id/linearLayout1"
-        android:layout_alignParentBottom="true"
-        android:orientation="horizontal"
-        android:background="@color/grey"
-        tools:ignore="MissingClass">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/resultsRecyclerView"
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="250dp"
 
-        />
+            app:cardBackgroundColor="@color/light_blue"
+            app:cardCornerRadius="30dp"
+            app:cardElevation="5dp"
+            app:cardUseCompatPadding="true"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="1dp" >
+
+<!--            <ImageView-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:layout_marginStart="10dp"-->
+<!--                android:id="@+id/backbtnimg"-->
+<!--                android:layout_width="30dp"-->
+<!--                android:layout_height="30dp"-->
+
+<!--                android:src="@drawable/left_arrow" />-->
+
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="230dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="40dp"
+                android:background="@drawable/circular_background"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.cardview.widget.CardView>
 
 
     </LinearLayout>
 
-</RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,5 +1,6 @@
 package com.example.mentorsapp
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,7 +8,8 @@ import android.widget.TextView
 import androidx.appcompat.view.menu.MenuView.ItemView
 import androidx.recyclerview.widget.RecyclerView
 
-class RollAdapter (val dataList: List<String>) : RecyclerView.Adapter<RollAdapter.ViewHolder>() {
+class RollAdapter (val dataList: List<String>) : RecyclerView.Adapter<RollAdapter.ViewHolder>()
+{
     class ViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView){
         val itemRollView : TextView = itemView.findViewById(R.id.rollnocard)
         val itemEmailView : TextView = itemView.findViewById(R.id.emailcard)
@@ -26,5 +28,12 @@ class RollAdapter (val dataList: List<String>) : RecyclerView.Adapter<RollAdapte
         val item = dataList[position]
         holder.itemRollView.text = item
         holder.itemEmailView.text = item+"@cvr.ac.in"
+
+        holder.itemView.setOnClickListener {
+            val context = holder.itemView.context
+            val intent = Intent(context, Student_details::class.java)
+            intent.putExtra("rollNumber", item)
+            context.startActivity(intent)
+        }
     }
 }

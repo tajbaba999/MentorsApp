@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity() {
         val apiService = retrofit.create(MentorService::class.java)
 
 
-        val email = "anishagupta.ag1997@cvr.ac.in"
+        val email = "anishagupta.ag1997@cvr.ac.indc"
         val call: Call<MentorDetails> = apiService.getMentorDetails(email)
 
         call.enqueue(object  : Callback<MentorDetails>{

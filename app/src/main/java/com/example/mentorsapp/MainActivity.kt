@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity() {
         val apiService = retrofit.create(MentorService::class.java)
 
 
-        val email = "anishagupta.ag1997@cvr.ac.in"
+        val email = user?.email.toString()
         val call: Call<MentorDetails> = apiService.getMentorDetails(email)
 
         call.enqueue(object  : Callback<MentorDetails>{
@@ -74,7 +74,7 @@ class MainActivity : AppCompatActivity() {
                                 mentor?.let {
                                     binding.name.text = it.name
                                     binding.desg.text = it.desg
-                                    binding.sec.text = it.sec
+//                                    binding.sec.text = it.sec
                                     binding.phone.text= it.phono.toString()
                                     stdlist= it.stdarr
 
@@ -98,7 +98,7 @@ class MainActivity : AppCompatActivity() {
 
 //        Log.d("datas","${stdlist}")
 
-        val dataList = listOf("Item 1", "Item 2", "Item 3", "Item 4", "Item 5")
+//        val dataList = listOf("Item 1", "Item 2", "Item 3", "Item 4", "Item 5")
 
 
 

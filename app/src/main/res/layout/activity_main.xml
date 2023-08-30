@@ -80,11 +80,11 @@
                         android:textSize="20sp"
                         tools:ignore="RtlCompat" />
                     <TextView
-                        android:id="@+id/sec"
+                        android:id="@+id/emailfirebase"
                         android:layout_width="match_parent"
                         android:layout_height="30dp"
                         android:gravity="center"
-                        android:text="Section"
+                        android:text="Mailid"
                         android:layout_marginLeft="10dp"
                         android:textAlignment="textStart"
                         android:textColor="@color/black"
@@ -144,25 +144,6 @@
             android:layout_weight="1"
             android:background="@color/white"
             android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/emailfirebase"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="Firebase-Mailid"
-                android:textColor="@color/black"
-                android:textSize="20sp" />
-
-
-
-
-
-
-
-
-
-
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerView"

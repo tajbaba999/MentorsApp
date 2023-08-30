@@ -20,7 +20,7 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="250dp"
+            android:layout_height="wrap_content"
             app:cardBackgroundColor="@color/light_blue"
             app:cardCornerRadius="35dp"
             app:cardElevation="3dp"
@@ -45,13 +45,69 @@
                         android:layout_marginTop="20dp"
                         android:text="Greeting's"
                         android:textColor="@color/black"
+                        android:textSize="25sp" />
+                    <TextView
+                        android:id="@+id/name"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:textAlignment="textStart"
+                        android:layout_marginLeft="10dp"
+                        android:text="Name"
+                        android:textColor="@color/black"
                         android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/desg"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:textAlignment="textStart"
+                        android:text="Designation"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        tools:ignore="RtlCompat" />
+
+                    <TextView
+                        android:id="@+id/phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:gravity="center"
+                        android:text="Phone"
+                        android:layout_marginLeft="10dp"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        tools:ignore="RtlCompat" />
+                    <TextView
+                        android:id="@+id/sec"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:gravity="center"
+                        android:text="Section"
+                        android:layout_marginLeft="10dp"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        tools:ignore="RtlCompat" />
+
+                    <TextView
+                        android:id="@+id/firststd"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Not used now use based on useage"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:textAlignment="textStart"
+                        tools:ignore="RtlCompat"
+                        android:layout_marginLeft="10dp"/>
 
                 </LinearLayout>
 
                 <ImageView
                     android:id="@+id/imageview"
-                    android:layout_width="150dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="0dp"
                     android:layout_marginTop="30dp"
@@ -94,58 +150,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Email password"
-                android:textColor="@color/black"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/name"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:gravity="center"
-                android:text="Email password"
-                android:textColor="@color/black"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/desg"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:gravity="center"
-                android:text="Email password"
-                android:textColor="@color/black"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/phone"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:gravity="center"
-                android:text="Email password"
-                android:textColor="@color/black"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/sec"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:gravity="center"
-                android:text="Email password"
+                android:text="Firebase-Mailid"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 
 
-            <TextView
-                android:id="@+id/firststd"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:gravity="center"
-                android:text="Email password"
-                android:textColor="@color/black"
-                android:textSize="20sp" />
+
+
+
+
+
+
+
+
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerView"
-                android:layout_margin="20dp"
+                android:layout_margin="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 

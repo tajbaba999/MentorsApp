@@ -27,20 +27,45 @@
             app:cardUseCompatPadding="true"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="1dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
-            <ImageView
-                android:id="@+id/imageview"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="230dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginBottom="40dp"
-                android:background="@drawable/circular_background"
-                app:layout_constraintDimensionRatio="1:1"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                <LinearLayout
+                    android:layout_width="230dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/greetings"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="20dp"
+                        android:text="Greeting's"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/imageview"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="40dp"
+                    android:background="@drawable/circular_background"
+                    app:layout_constraintDimensionRatio="1:1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </LinearLayout>
+
+
+
 
         </androidx.cardview.widget.CardView>
     </LinearLayout>
@@ -65,9 +90,18 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/emailfirebase"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Email password"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <TextView
                 android:id="@+id/name"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="30dp"
                 android:gravity="center"
                 android:text="Email password"
                 android:textColor="@color/black"
@@ -76,7 +110,7 @@
             <TextView
                 android:id="@+id/desg"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="30dp"
                 android:gravity="center"
                 android:text="Email password"
                 android:textColor="@color/black"
@@ -85,7 +119,7 @@
             <TextView
                 android:id="@+id/phone"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="30dp"
                 android:gravity="center"
                 android:text="Email password"
                 android:textColor="@color/black"
@@ -94,11 +128,26 @@
             <TextView
                 android:id="@+id/sec"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="30dp"
                 android:gravity="center"
                 android:text="Email password"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
+
+
+            <TextView
+                android:id="@+id/firststd"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:gravity="center"
+                android:text="Email password"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_margin="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
 
         </LinearLayout>
 

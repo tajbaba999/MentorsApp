@@ -2,8 +2,10 @@ package com.example.mentorsapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.mentorsapp.databinding.ActivityMainBinding
 import com.example.mentorsapp.databinding.ActivityRegestrationBinding
@@ -16,19 +18,40 @@ import retrofit2.create
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.util.Calendar
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
     lateinit var firebaseAuth: FirebaseAuth
+    lateinit var stdlist : List<String>
+    lateinit var recyclerView : RecyclerView
+    lateinit var rollAdapter: RollAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         val user = Firebase.auth.currentUser
-//        if (user != null) {
-//            binding.email.text = user.email.toString()
-//        }
+        recyclerView = binding.recyclerView
+        if (user != null) {
+            binding.emailfirebase.text = user.email.toString()
+        }
+        val currentTime = Calendar.getInstance()
+        val currentHour = currentTime.get(Calendar.HOUR_OF_DAY)
+
+        val morningStart = 4
+        val afternoonStart = 12
+        val eveningStart = 18
+
+
+        val greetingMessage = when(currentHour) {
+            in morningStart until afternoonStart -> "Good Morning"
+            in afternoonStart until eveningStart -> "Good Afternoon"
+            else -> "Good Evening"
+        }
+
+
+        binding.greetings.text = greetingMessage
 
 //        val url = ""
 //        val  imgeViewproile = binding.imageview
@@ -40,7 +63,7 @@ class MainActivity : AppCompatActivity() {
         val apiService = retrofit.create(MentorService::class.java)
 
 
-        val email = "p.madhavi@cvr.ac.in"
+        val email = "anishagupta.ag1997@cvr.ac.in"
         val call: Call<MentorDetails> = apiService.getMentorDetails(email)
 
         call.enqueue(object  : Callback<MentorDetails>{
@@ -53,6 +76,13 @@ class MainActivity : AppCompatActivity() {
                                     binding.desg.text = it.desg
                                     binding.sec.text = it.sec
                                     binding.phone.text= it.phono.toString()
+                                    stdlist= it.stdarr
+
+//                                    Log.d("datas", "$stdlist")
+
+                                    recyclerView.layoutManager =  LinearLayoutManager(this@MainActivity)
+                                    rollAdapter = RollAdapter(stdlist)
+                                    recyclerView.adapter= rollAdapter
                                 }
 
                             }
@@ -65,5 +95,15 @@ class MainActivity : AppCompatActivity() {
             }
         )
 
+
+//        Log.d("datas","${stdlist}")
+
+        val dataList = listOf("Item 1", "Item 2", "Item 3", "Item 4", "Item 5")
+
+
+
+
+//        rollAdapter = RollAdapter(dataList)
+//        recyclerView.adapter = rollAdapter
     }
 }

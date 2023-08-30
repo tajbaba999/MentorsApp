@@ -14,7 +14,7 @@
         android:theme="@style/Theme.MentorsApp"
         tools:targetApi="31">
         <activity
-            android:name=".Student_details"
+            android:name=".StudentPage"
             android:exported="false" />
         <activity
             android:name=".Regestration"

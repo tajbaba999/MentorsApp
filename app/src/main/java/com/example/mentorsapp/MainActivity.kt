@@ -32,7 +32,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val user = Firebase.auth.currentUser
+
         recyclerView = binding.recyclerView
+
         if (user != null) {
             binding.emailfirebase.text = user.email.toString()
         }

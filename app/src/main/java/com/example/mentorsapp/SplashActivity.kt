@@ -16,6 +16,6 @@ class SplashActivity : AppCompatActivity() {
             val iHome = Intent(this@SplashActivity, loginpage::class.java)
             startActivity(iHome)
             finish()
-        }, 2000)
+        }, 1500)
     }
 }

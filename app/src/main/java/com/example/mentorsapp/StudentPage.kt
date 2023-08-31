@@ -1,5 +1,6 @@
 package com.example.mentorsapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -47,6 +48,8 @@ class StudentPage : AppCompatActivity() {
             })
         }
 
+        val intent = Intent(this@StudentPage,UploadImages::class.java)
+        startActivity(intent)
 
     }
 }

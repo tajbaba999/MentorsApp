@@ -14,6 +14,12 @@
         android:theme="@style/Theme.MentorsApp"
         tools:targetApi="31">
         <activity
+            android:name=".ShowImages"
+            android:exported="false" />
+        <activity
+            android:name=".UploadImages"
+            android:exported="false" />
+        <activity
             android:name=".StudentPage"
             android:exported="false" />
         <activity

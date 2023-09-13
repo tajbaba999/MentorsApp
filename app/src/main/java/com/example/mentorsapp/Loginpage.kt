@@ -4,17 +4,13 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
 import com.example.mentorsapp.databinding.ActivityLoginpageBinding
-import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
-class loginpage : AppCompatActivity() {
+class Loginpage : AppCompatActivity() {
     lateinit var firebaseAuth: FirebaseAuth
     lateinit var binding: ActivityLoginpageBinding
     @SuppressLint("MissingInflatedId")
@@ -45,7 +41,7 @@ class loginpage : AppCompatActivity() {
                  }
              }
             else{
-                Toast.makeText(this, "Pleas Fill the mandateory Fields",Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Please Fill the mandatoery Fields",Toast.LENGTH_SHORT).show()
              }
         }
     }

@@ -26,7 +26,7 @@
             android:name=".Regestration"
             android:exported="false" />
         <activity
-            android:name=".loginpage"
+            android:name=".Loginpage"
             android:exported="false" />
         <activity
             android:name=".SplashActivity"

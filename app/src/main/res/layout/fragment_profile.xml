@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragments.Profile">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="35dp"
+        app:cardElevation="3dp"
+        app:cardUseCompatPadding="true"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="1dp"
+        android:layout_weight="0">
+
+        <LinearLayout
+            android:layout_width="380dp"
+            android:layout_height="245dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="230dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/greetings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="44dp"
+                    android:layout_marginLeft="10sp"
+                    android:layout_marginTop="20dp"
+                    android:text="Greeting's"
+                    android:textColor="@color/white"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="216dp"
+                    android:layout_height="38dp"
+                    android:layout_marginLeft="10dp"
+                    android:text="Name"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/desg"
+                    android:layout_width="220dp"
+                    android:layout_height="43dp"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center"
+                    android:text="Designation"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    tools:ignore="RtlCompat" />
+
+                <TextView
+                    android:id="@+id/emailfirebase"
+                    android:layout_width="230dp"
+                    android:layout_height="43dp"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center"
+                    android:text="Mailid"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    tools:ignore="RtlCompat" />
+
+                <TextView
+                    android:id="@+id/phone"
+                    android:layout_width="217dp"
+                    android:layout_height="42dp"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="center"
+                    android:text="Phone"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    tools:ignore="RtlCompat" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+
+    </androidx.cardview.widget.CardView>
+
+</FrameLayout>

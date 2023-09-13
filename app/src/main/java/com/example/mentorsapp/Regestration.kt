@@ -30,7 +30,7 @@ class Regestration : AppCompatActivity() {
                         firebaseAuth.createUserWithEmailAndPassword(email, password1).addOnCompleteListener {
                             if (it.isSuccessful){
                                 Toast.makeText(this, it.result.toString(), Toast.LENGTH_SHORT)
-                                val intent = Intent(this, loginpage::class.java)
+                                val intent = Intent(this, Loginpage::class.java)
                                 startActivity(intent)
                             }
                             else{

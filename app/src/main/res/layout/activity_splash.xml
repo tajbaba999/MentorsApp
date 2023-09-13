@@ -9,6 +9,7 @@
     android:orientation="vertical"
     tools:context=".SplashActivity">
 
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="409dp"

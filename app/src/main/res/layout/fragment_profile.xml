@@ -32,8 +32,8 @@
                     android:layout_height="44dp"
                     android:layout_marginLeft="10sp"
                     android:layout_marginTop="20dp"
-                    android:text="Greeting's"
-                    android:textColor="@color/white"
+                    android:text="Greetings"
+                    android:textColor="@color/black"
                     android:textSize="25sp" />
 
                 <TextView
@@ -43,7 +43,7 @@
                     android:layout_marginLeft="10dp"
                     android:text="Name"
                     android:textAlignment="textStart"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textSize="20sp" />
 
                 <TextView
@@ -54,7 +54,7 @@
                     android:gravity="center"
                     android:text="Designation"
                     android:textAlignment="textStart"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textSize="20sp"
                     tools:ignore="RtlCompat" />
 
@@ -66,7 +66,7 @@
                     android:gravity="center"
                     android:text="Mailid"
                     android:textAlignment="textStart"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textSize="20sp"
                     tools:ignore="RtlCompat" />
 
@@ -78,7 +78,7 @@
                     android:gravity="center"
                     android:text="Phone"
                     android:textAlignment="textStart"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textSize="20sp"
                     tools:ignore="RtlCompat" />
 

@@ -1,3 +1,5 @@
+@file:Suppress("SpellCheckingInspection")
+
 package com.example.mentorsapp.Fragments
 
 import android.annotation.SuppressLint
@@ -27,8 +29,9 @@ import java.util.Calendar
 
 class HomeFragment : Fragment() {
     lateinit var firebaseAuth: FirebaseAuth
-    lateinit var stdlist: List<String>
     lateinit var recyclerView: RecyclerView
+    lateinit var stdlist: List<String>
+
     lateinit var rollAdapter: RollAdapter
 
     override fun onCreateView(
@@ -64,14 +67,16 @@ class HomeFragment : Fragment() {
         val email = user?.email.toString()
         val call: Call<MentorDetails> = apiService.getMentorDetails(email)
 
+
         call.enqueue(object : Callback<MentorDetails> {
             override fun onResponse(call: Call<MentorDetails>, response: Response<MentorDetails>) {
                 if (response.isSuccessful) {
                     val mentor: MentorDetails? = response.body()
+                     val stdlist: List<String>? = ArrayList<String>()
 
-                    mentor?.let {
+                    mentor?.let {item->
                         recyclerView.layoutManager = LinearLayoutManager(requireContext())
-                        rollAdapter = RollAdapter(stdlist)
+                        rollAdapter = stdlist?.let { RollAdapter(it) }!!
                         recyclerView.adapter = rollAdapter
                     }
                 }

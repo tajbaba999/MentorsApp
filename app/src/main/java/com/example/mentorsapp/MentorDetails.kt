@@ -11,4 +11,6 @@ data class MentorDetails(
     @SerializedName("sec")   val sec: String,
     @SerializedName("stdarr")   val stdarr: List<String>,
     @SerializedName("stdcnt")    val stdcnt: Int
-)
+) {
+
+}

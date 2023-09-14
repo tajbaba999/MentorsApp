@@ -35,6 +35,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        showFragment(HomeFragment())
 
 //        val user = Firebase.auth.currentUser
 
@@ -73,34 +74,34 @@ class MainActivity : AppCompatActivity() {
 //        val email = user?.email.toString()
 //        val call: Call<MentorDetails> = apiService.getMentorDetails(email)
 
-        call.enqueue(object  : Callback<MentorDetails>{
-            override fun onResponse(call: Call<MentorDetails>, response: Response<MentorDetails>) {
-                            if(response.isSuccessful){
-                                val mentor: MentorDetails? = response.body()
-
-                                mentor?.let {
-//                                    binding.name.text = it.name
-//                                    binding.desg.text = it.desg
-////                                    binding.sec.text = it.sec
-//                                    binding.phone.text= it.phono.toString()
-//                                    stdlist= it.stdarr
-
-//                                    Log.d("datas", "$stdlist")
-
-                                    recyclerView.layoutManager =  LinearLayoutManager(this@MainActivity)
-                                    rollAdapter = RollAdapter(stdlist)
-                                    recyclerView.adapter= rollAdapter
-                                }
-
-                            }
-                    }
-
-            override fun onFailure(call: Call<MentorDetails>, t: Throwable) {
-                Toast.makeText(this@MainActivity, "Error : ${t.localizedMessage}", Toast.LENGTH_LONG).show()
-                }
-
-            }
-        )
+//        call.enqueue(object  : Callback<MentorDetails>{
+//            override fun onResponse(call: Call<MentorDetails>, response: Response<MentorDetails>) {
+//                            if(response.isSuccessful){
+//                                val mentor: MentorDetails? = response.body()
+//
+//                                mentor?.let {
+////                                    binding.name.text = it.name
+////                                    binding.desg.text = it.desg
+//////                                    binding.sec.text = it.sec
+////                                    binding.phone.text= it.phono.toString()
+////                                    stdlist= it.stdarr
+//
+////                                    Log.d("datas", "$stdlist")
+//
+//                                    recyclerView.layoutManager =  LinearLayoutManager(this@MainActivity)
+//                                    rollAdapter = RollAdapter(stdlist)
+//                                    recyclerView.adapter= rollAdapter
+//                                }
+//
+//                            }
+//                    }
+//
+//            override fun onFailure(call: Call<MentorDetails>, t: Throwable) {
+//                Toast.makeText(this@MainActivity, "Error : ${t.localizedMessage}", Toast.LENGTH_LONG).show()
+//                }
+//
+//            }
+//        )
 
 
 //        Log.d("datas","${stdlist}")

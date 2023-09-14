@@ -28,16 +28,17 @@
                 android:layout_marginStart="10dp"
                 android:textColor="@color/black"
                 />
+
             <TextView
                 android:id="@+id/emailfirebase"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
                 android:text="Email Firebase"
+                android:textColor="@color/black"
                 android:textSize="13dp"
                 android:textStyle="normal"
-                android:layout_marginStart="10dp"
-                android:textColor="@color/black"
-                />
+                tools:ignore="TextSizeCheck" />
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerView"
                 android:layout_margin="10dp"

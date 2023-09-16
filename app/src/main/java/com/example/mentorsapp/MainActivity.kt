@@ -11,6 +11,7 @@ import com.bumptech.glide.Glide
 import com.example.mentorsapp.Fragments.HomeFragment
 import com.example.mentorsapp.Fragments.Profile
 import com.example.mentorsapp.Fragments.UploadData
+//import com.example.mentorsapp.Fragments.UploadData
 import com.example.mentorsapp.Fragments.UploadWork
 import com.example.mentorsapp.databinding.ActivityMainBinding
 import com.example.mentorsapp.databinding.ActivityRegestrationBinding
@@ -131,5 +132,5 @@ class MainActivity : AppCompatActivity() {
         transaction.replace(R.id.framelayout, fragment)
         transaction.disallowAddToBackStack()
         transaction.commit()
-    }
+        }
 }

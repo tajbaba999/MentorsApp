@@ -58,7 +58,7 @@ dependencies {
     implementation("androidx.core:core-splashscreen:1.0.0")
 
     //Material design
-//    implementation 'com.google.android.material:material:1.11.0-alpha02'
+   implementation 'com.google.android.material:material:1.11.0-alpha02'
 
     //Retrofit depen
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'

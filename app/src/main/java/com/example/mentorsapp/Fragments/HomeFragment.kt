@@ -67,41 +67,41 @@ class HomeFragment : Fragment() {
 
 
         val email = user?.email.toString()
-        val call: Call<MentorDetails> = apiService.getMentorDetails(email)
+        val call: Call<MentorDetails> = apiService.getMentorDetails(email).apply {
 
 
-                call.enqueue(object  : Callback<MentorDetails>{
-            override fun onResponse(call: Call<MentorDetails>, response: Response<MentorDetails>) {
-                            if(response.isSuccessful){
-                                val mentor: MentorDetails? = response.body()
+            enqueue(object  : Callback<MentorDetails>{
+        override fun onResponse(call: Call<MentorDetails>, response: Response<MentorDetails>) {
+                        if(response.isSuccessful){
+                            val mentor: MentorDetails? = response.body()
 
-                                mentor?.let {
+                            mentor?.let {
 //                                    binding.name.text = it.name
 //                                    binding.desg.text = it.desg
 //                                    binding.sec.text = it.sec
 //                                    binding.phone.text = it.phono.toString()
 
 //                                    val name = view.findViewById<TextView>(R.id.rollnocard)
-                                    stdlist= it.stdarr
+                                stdlist= it.stdarr
 
-                                    Log.d("datas", "$stdlist")
+                                Log.d("datas", "$stdlist")
 
 
 
-                                    recyclerView.layoutManager =  LinearLayoutManager(requireContext())
-                                    rollAdapter = RollAdapter(stdlist)
-                                    recyclerView.adapter= rollAdapter
-                                }
-
+                                recyclerView.layoutManager =  LinearLayoutManager(requireContext())
+                                rollAdapter = RollAdapter(stdlist)
+                                recyclerView.adapter= rollAdapter
                             }
-                    }
 
-            override fun onFailure(call: Call<MentorDetails>, t: Throwable) {
-                Toast.makeText(requireContext(), "Error : ${t.localizedMessage}", Toast.LENGTH_LONG).show()
+                        }
                 }
 
+        override fun onFailure(call: Call<MentorDetails>, t: Throwable) {
+            Toast.makeText(requireContext(), "Error : ${t.localizedMessage}", Toast.LENGTH_LONG).show()
             }
-        )
+
+        }
+    ) }
 
 
         return view

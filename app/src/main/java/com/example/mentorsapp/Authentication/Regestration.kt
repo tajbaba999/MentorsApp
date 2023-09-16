@@ -1,4 +1,4 @@
-package com.example.mentorsapp
+package com.example.mentorsapp.Authentication
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

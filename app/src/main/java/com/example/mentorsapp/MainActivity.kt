@@ -131,5 +131,5 @@ class MainActivity : AppCompatActivity() {
         transaction.replace(R.id.framelayout, fragment)
         transaction.disallowAddToBackStack()
         transaction.commit()
-        }
+    }
 }

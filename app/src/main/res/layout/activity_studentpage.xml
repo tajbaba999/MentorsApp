@@ -19,10 +19,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.031"
+        app:layout_constraintHorizontal_bias="0.417"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.009" />
+        app:layout_constraintVertical_bias="0.008" />
 
     <TextView
         android:id="@+id/nametV"
@@ -41,26 +41,58 @@
         app:layout_constraintVertical_bias="0.14" />
 
     <TextView
-        android:id="@+id/addresstV"
-        android:layout_width="341dp"
-        android:layout_height="164dp"
-        android:text="adress"
-        android:textAlignment="textStart"
+        android:id="@+id/dob"
+        android:layout_width="186dp"
+        android:layout_height="40dp"
+        android:text="Date of Birth"
+        android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.371"
+        app:layout_constraintHorizontal_bias="0.115"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.396" />
+        app:layout_constraintVertical_bias="0.239" />
 
     <TextView
-        android:id="@+id/stdNumbertV"
+        android:id="@+id/fatherno"
         android:layout_width="186dp"
         android:layout_height="40dp"
-        android:text="Number"
+        android:text="Father Numebr"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.115"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.34" />
+
+    <TextView
+        android:id="@+id/addresstV"
+        android:layout_width="341dp"
+        android:layout_height="164dp"
+        android:text="adress"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.228"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.727" />
+
+    <TextView
+        android:id="@+id/stdmail"
+        android:layout_width="186dp"
+        android:layout_height="40dp"
+        android:text="Std mail"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="20sp"
@@ -70,15 +102,6 @@
         app:layout_constraintHorizontal_bias="0.115"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.234" />
+        app:layout_constraintVertical_bias="0.457" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Upload page"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addresstV" />
 </androidx.constraintlayout.widget.ConstraintLayout>

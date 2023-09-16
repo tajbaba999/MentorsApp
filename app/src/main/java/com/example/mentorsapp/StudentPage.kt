@@ -34,8 +34,10 @@ class StudentPage : AppCompatActivity() {
 
                         student?.let {
                                         binding.nametV.text = student.name
-                                        binding.stdNumbertV.text= student.stdno.toString()
                                         binding.addresstV.text = student.permadd
+                                        binding.dob.text= student.dob
+                                        binding.fatherno.text = student.fatherno.toString()
+                                        binding.stdmail.text= student.stdmail
                         }
                     }
 
@@ -48,8 +50,6 @@ class StudentPage : AppCompatActivity() {
             })
         }
 
-        val intent = Intent(this@StudentPage,UploadImages::class.java)
-        startActivity(intent)
 
     }
 }

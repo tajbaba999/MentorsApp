@@ -1,10 +1,11 @@
-package com.example.mentorsapp
+package com.example.mentorsapp.Authentication
 
 import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.example.mentorsapp.MainActivity
 import com.example.mentorsapp.databinding.ActivityLoginpageBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth

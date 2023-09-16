@@ -4,6 +4,7 @@ package com.example.mentorsapp.Fragments
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -64,28 +65,44 @@ class HomeFragment : Fragment() {
         val retrofit = RetrofitInstance.createRetrofitInstance()
         val apiService = retrofit.create(MentorService::class.java)
 
+
         val email = user?.email.toString()
         val call: Call<MentorDetails> = apiService.getMentorDetails(email)
 
 
-        call.enqueue(object : Callback<MentorDetails> {
+                call.enqueue(object  : Callback<MentorDetails>{
             override fun onResponse(call: Call<MentorDetails>, response: Response<MentorDetails>) {
-                if (response.isSuccessful) {
-                    val mentor: MentorDetails? = response.body()
-                     val stdlist: List<String>? = ArrayList<String>()
+                            if(response.isSuccessful){
+                                val mentor: MentorDetails? = response.body()
 
-                    mentor?.let {item->
-                        recyclerView.layoutManager = LinearLayoutManager(requireContext())
-                        rollAdapter = stdlist?.let { RollAdapter(it) }!!
-                        recyclerView.adapter = rollAdapter
+                                mentor?.let {
+//                                    binding.name.text = it.name
+//                                    binding.desg.text = it.desg
+//                                    binding.sec.text = it.sec
+//                                    binding.phone.text = it.phono.toString()
+
+//                                    val name = view.findViewById<TextView>(R.id.rollnocard)
+                                    stdlist= it.stdarr
+
+                                    Log.d("datas", "$stdlist")
+
+
+
+                                    recyclerView.layoutManager =  LinearLayoutManager(requireContext())
+                                    rollAdapter = RollAdapter(stdlist)
+                                    recyclerView.adapter= rollAdapter
+                                }
+
+                            }
                     }
-                }
-            }
 
             override fun onFailure(call: Call<MentorDetails>, t: Throwable) {
                 Toast.makeText(requireContext(), "Error : ${t.localizedMessage}", Toast.LENGTH_LONG).show()
+                }
+
             }
-        })
+        )
+
 
         return view
     }

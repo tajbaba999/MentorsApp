@@ -24,10 +24,10 @@
             android:name=".StudentPage"
             android:exported="false" />
         <activity
-            android:name=".Regestration"
+            android:name=".Authentication.Regestration"
             android:exported="false" />
         <activity
-            android:name=".Loginpage"
+            android:name=".Authentication.Loginpage"
             android:exported="false" />
         <activity
             android:name=".SplashActivity"

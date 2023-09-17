@@ -7,8 +7,12 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class RollAdapter (val dataList: List<String>) : RecyclerView.Adapter<RollAdapter.ViewHolder>()
+class RollAdapter(var dataList: List<String>) : RecyclerView.Adapter<RollAdapter.ViewHolder>()
 {
+    fun updateData(newStdList: List<String>) {
+        dataList = newStdList
+        notifyDataSetChanged()
+    }
     class ViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView){
         val itemRollView : TextView = itemView.findViewById(R.id.rollnocard)
         val itemEmailView : TextView = itemView.findViewById(R.id.emailcard)

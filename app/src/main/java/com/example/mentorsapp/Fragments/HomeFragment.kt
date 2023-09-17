@@ -5,20 +5,17 @@ package com.example.mentorsapp.Fragments
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.os.Handler
-import android.os.Looper
 import android.view.LayoutInflater
-import android.view.SearchEvent
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 //import android.widget.SearchView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.mentorsapp.MainActivity
 import com.example.mentorsapp.MentorDetails
 import com.example.mentorsapp.MentorService
 import com.example.mentorsapp.MentorViewModel
@@ -33,16 +30,22 @@ import retrofit2.Callback
 import retrofit2.Response
 import java.util.Calendar
 import androidx.appcompat.widget.SearchView
+import androidx.fragment.app.viewModels
+import com.facebook.shimmer.ShimmerFrameLayout
 
 class HomeFragment : Fragment() {
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var recyclerView: RecyclerView
     private var stdlist: List<String> = ArrayList()
     private  lateinit var rollAdapter: RollAdapter
-    private val mentorViewModel : MentorViewModel by activityViewModels()
+    private val mentorViewModel : MentorViewModel by viewModels()
     private var doubleBackToExitPressedOnce : Boolean = false
     private lateinit var originalStdList: List<String>
     private var filteredStdList: List<String> = ArrayList()
+    private val handler = Handler()
+    private var currrentQuery : String? = null
+    private val DEBOUNCE_DELAY: Long = 300
+    private lateinit var shimmerFrameLayout: ShimmerFrameLayout
      @SuppressLint("MissingInflatedId")
      override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -50,17 +53,22 @@ class HomeFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_home, container, false)
         val user = Firebase.auth.currentUser
-        var recyclerView = view.findViewById<RecyclerView>(R.id.recyclerView)
-        val greetings = view.findViewById<TextView>(R.id.greetings)
+        var recyclerView: RecyclerView?
+         val greetings = view.findViewById<TextView>(R.id.greetings)
         val emailfire = view.findViewById<TextView>(R.id.emailfirebase)
-        val  search =view.findViewById<androidx.appcompat.widget.SearchView>(R.id.searchView)
+        val  search =view.findViewById<SearchView>(R.id.searchView)
+         shimmerFrameLayout = view.findViewById(R.id.shimmer_view_container)
+         val shimmerlayout = view.findViewById<LinearLayout>(R.id.shrimmer_layout)
+
          recyclerView = view.findViewById(R.id.recyclerView)
 
-         stdlist = listOf("Item1", "Item2", "Item3")
+         stdlist = listOf("studnet1","studnet2")
+//         rollAdapter = RollAdapter(stdlist)
+//         recyclerView.adapter = rollAdapter
 
 
 
-         mentorViewModel.mentorData.observe(viewLifecycleOwner, Observer {newdata ->
+         mentorViewModel.getStudnetData().observe(viewLifecycleOwner, Observer {newdata ->
              newdata?.let {
                  rollAdapter = RollAdapter(it)
                  recyclerView.adapter = rollAdapter
@@ -98,14 +106,26 @@ class HomeFragment : Fragment() {
 
                             mentor?.let {
                                 stdlist= it.stdarr
+                                val newStudentData = it.stdarr
+                                mentorViewModel.clearStudnetData()
+                                mentorViewModel.setStudnetData(newStudentData)
+                                rollAdapter.updateData(newStudentData)
+
 //                                Log.d("datas", "$stdlist")
 //                                recyclerView.layoutManager =  LinearLayoutManager(requireContext())
 //                                rollAdapter = RollAdapter(stdlist)
 //                                recyclerView.adapter= rollAdapter
 
+
                                 recyclerView.layoutManager = LinearLayoutManager(requireContext())
-                                rollAdapter = RollAdapter(stdlist)
+                                rollAdapter = RollAdapter(newStudentData)
                                 recyclerView.adapter = rollAdapter
+
+                                shimmerFrameLayout.stopShimmer()
+                                shimmerlayout.visibility =View.GONE
+
+
+//                                rollAdapter.updateData(stdlist)
 
                             }
 
@@ -118,6 +138,8 @@ class HomeFragment : Fragment() {
 
         }
     ) }
+
+         recyclerView.layoutManager = LinearLayoutManager(requireContext())
          originalStdList = stdlist
 
 
@@ -127,8 +149,17 @@ class HomeFragment : Fragment() {
              }
 
              override fun onQueryTextChange(newText : String?): Boolean {
-                 val filteredList = filterList(newText)
-                 updateRecyclerView(filteredList)
+
+                 handler.removeCallbacksAndMessages(null)
+                 handler.postDelayed({
+                     if (newText != null && newText != currrentQuery){
+                         currrentQuery  = newText
+                         val filteredStdList = filterList(newText)
+                         updateRecyclerView(filteredStdList)
+                     }
+                 },DEBOUNCE_DELAY)
+//                 val filteredList = filterList(newText)
+//                 updateRecyclerView(filteredList)
                  return true
              }
 
@@ -138,8 +169,8 @@ class HomeFragment : Fragment() {
     }
 
     private fun updateRecyclerView(filteredStdList: List<String>) {
-        val filteredAdapter = RollAdapter(filteredStdList)
-        recyclerView.adapter = filteredAdapter
+         this.filteredStdList =filteredStdList
+         rollAdapter.updateData(filteredStdList)
     }
 
     private fun filterList(query : String?): List<String> {
@@ -149,7 +180,6 @@ class HomeFragment : Fragment() {
         }
         return originalStdList
     }
-
 
 }
 

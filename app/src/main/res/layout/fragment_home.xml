@@ -60,13 +60,42 @@
 
             </com.google.android.material.card.MaterialCardView>
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerView"
-                android:layout_margin="10dp"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp" />
+
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/shimmer_view_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+                <LinearLayout
+                    android:id="@+id/shrimmer_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <include layout="@layout/shimmer_for_stddata"/>
+                    <include layout="@layout/shimmer_for_stddata"/>
+                    <include layout="@layout/shimmer_for_stddata"/>
+                    <include layout="@layout/shimmer_for_stddata"/>
+                    <include layout="@layout/shimmer_for_stddata"/>
+                    <include layout="@layout/shimmer_for_stddata"/>
+                </LinearLayout>
+            </com.facebook.shimmer.ShimmerFrameLayout>
+
+        </RelativeLayout>
 
         </LinearLayout>
 

@@ -36,7 +36,7 @@ import com.facebook.shimmer.ShimmerFrameLayout
 class HomeFragment : Fragment() {
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var recyclerView: RecyclerView
-    private var stdlist: List<String> = ArrayList()
+    private var stdlist: MutableList<String> = mutableListOf()
     private  lateinit var rollAdapter: RollAdapter
     private val mentorViewModel : MentorViewModel by viewModels()
     private var doubleBackToExitPressedOnce : Boolean = false
@@ -62,7 +62,7 @@ class HomeFragment : Fragment() {
 
          recyclerView = view.findViewById(R.id.recyclerView)
 
-         stdlist = listOf("studnet1","studnet2")
+//         stdlist = listOf("studnet1","studnet2")
 //         rollAdapter = RollAdapter(stdlist)
 //         recyclerView.adapter = rollAdapter
 
@@ -105,11 +105,23 @@ class HomeFragment : Fragment() {
                             val mentor: MentorDetails? = response.body()
 
                             mentor?.let {
-                                stdlist= it.stdarr
+
                                 val newStudentData = it.stdarr
+                                stdlist.clear()
+                                stdlist.addAll(newStudentData)
                                 mentorViewModel.clearStudnetData()
                                 mentorViewModel.setStudnetData(newStudentData)
                                 rollAdapter.updateData(newStudentData)
+
+                                recyclerView.layoutManager =LinearLayoutManager(requireContext())
+                                rollAdapter = RollAdapter(newStudentData)
+                                recyclerView.adapter = rollAdapter
+
+//                                stdlist= it.stdarr
+//                                val newStudentData = it.stdarr
+//                                mentorViewModel.clearStudnetData()
+//                                mentorViewModel.setStudnetData(newStudentData)
+//                                rollAdapter.updateData(newStudentData)
 
 //                                Log.d("datas", "$stdlist")
 //                                recyclerView.layoutManager =  LinearLayoutManager(requireContext())
@@ -117,9 +129,9 @@ class HomeFragment : Fragment() {
 //                                recyclerView.adapter= rollAdapter
 
 
-                                recyclerView.layoutManager = LinearLayoutManager(requireContext())
-                                rollAdapter = RollAdapter(newStudentData)
-                                recyclerView.adapter = rollAdapter
+//                                recyclerView.layoutManager = LinearLayoutManager(requireContext())
+//                                rollAdapter = RollAdapter(newStudentData)
+//                                recyclerView.adapter = rollAdapter
 
                                 shimmerFrameLayout.stopShimmer()
                                 shimmerlayout.visibility =View.GONE

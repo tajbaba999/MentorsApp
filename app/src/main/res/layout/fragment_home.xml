@@ -39,6 +39,29 @@
                 android:textSize="13dp"
                 android:textStyle="normal"
                 tools:ignore="TextSizeCheck" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/materialcardviewserarchview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="@dimen/_10sdp"
+                app:cardElevation="@dimen/_10sdp"
+                app:cardUseCompatPadding="true">
+                <androidx.appcompat.widget.SearchView
+                    android:id="@+id/searchView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:queryHint="Search here ..."
+                    app:iconifiedByDefault="false"
+                    app:queryBackground="@android:color/transparent"
+                    >
+
+                </androidx.appcompat.widget.SearchView>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerView"
                 android:layout_margin="10dp"

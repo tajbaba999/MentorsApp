@@ -2,6 +2,8 @@ package com.example.mentorsapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -26,94 +28,22 @@ import retrofit2.Callback
 import retrofit2.Response
 import java.util.Calendar
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), OnBackPressedListener {
     lateinit var binding: ActivityMainBinding
     lateinit var firebaseAuth: FirebaseAuth
     lateinit var stdlist : List<String>
     lateinit var recyclerView : RecyclerView
     lateinit var rollAdapter: RollAdapter
+    private var doubleBackToExitPressedOnce = false
+    private var onBackPressedListener: OnBackPressedListener? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         showFragment(HomeFragment())
 
-//        val user = Firebase.auth.currentUser
+        firebaseAuth = Firebase.auth
 
-//        recyclerView = binding.recyclerView
-
-//        if (user != null) {
-//            binding.emailfirebase.text = user.email.toString()
-//        }
-//        val currentTime = Calendar.getInstance()
-//        val currentHour = currentTime.get(Calendar.HOUR_OF_DAY)
-//
-//        val morningStart = 4
-//        val afternoonStart = 12
-//        val eveningStart = 18
-//
-//
-//        val greetingMessage = when(currentHour) {
-//            in morningStart until afternoonStart -> "Good Morning"
-//            in afternoonStart until eveningStart -> "Good Afternoon"
-//            else -> "Good Evening"
-//        }
-
-
-//        binding.greetings.text = greetingMessage
-
-//        val url = ""
-//        val  imgeViewproile = binding.imageview
-//        Glide.with(this).load(url).circleCrop().fitCenter().into(imgeViewproile)
-        //api calls
-
-
-//        val retrofit = RetrofitInstance.createRetrofitInstance()
-//        val apiService = retrofit.create(MentorService::class.java)
-
-
-//        val email = user?.email.toString()
-//        val call: Call<MentorDetails> = apiService.getMentorDetails(email)
-
-//        call.enqueue(object  : Callback<MentorDetails>{
-//            override fun onResponse(call: Call<MentorDetails>, response: Response<MentorDetails>) {
-//                            if(response.isSuccessful){
-//                                val mentor: MentorDetails? = response.body()
-//
-//                                mentor?.let {
-////                                    binding.name.text = it.name
-////                                    binding.desg.text = it.desg
-//////                                    binding.sec.text = it.sec
-////                                    binding.phone.text= it.phono.toString()
-////                                    stdlist= it.stdarr
-//
-////                                    Log.d("datas", "$stdlist")
-//
-//                                    recyclerView.layoutManager =  LinearLayoutManager(this@MainActivity)
-//                                    rollAdapter = RollAdapter(stdlist)
-//                                    recyclerView.adapter= rollAdapter
-//                                }
-//
-//                            }
-//                    }
-//
-//            override fun onFailure(call: Call<MentorDetails>, t: Throwable) {
-//                Toast.makeText(this@MainActivity, "Error : ${t.localizedMessage}", Toast.LENGTH_LONG).show()
-//                }
-//
-//            }
-//        )
-
-
-//        Log.d("datas","${stdlist}")
-
-//        val dataList = listOf("Item 1", "Item 2", "Item 3", "Item 4", "Item 5")
-
-
-
-
-//        rollAdapter = RollAdapter(dataList)
-//        recyclerView.adapter = rollAdapter
         binding.bottomnavigation.setOnItemSelectedListener{
 
             when(it.itemId){
@@ -126,11 +56,18 @@ class MainActivity : AppCompatActivity() {
             return@setOnItemSelectedListener true
 
         }
+
+        fun setOnBackPressedListener(listener: OnBackPressedListener?) {
+            onBackPressedListener = listener
+        }
     }
     private  fun showFragment(fragment: Fragment){
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.framelayout, fragment)
-        transaction.disallowAddToBackStack()
+        transaction.addToBackStack(null)
+//        transaction.disallowAddToBackStack()
         transaction.commit()
         }
+
+
 }

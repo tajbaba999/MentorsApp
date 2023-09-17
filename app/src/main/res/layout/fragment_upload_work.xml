@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".Fragments.UploadWork"
     android:background="@color/white" >
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -16,7 +17,7 @@
             android:id="@+id/imageCardView"
             android:layout_width="0dp"
             android:layout_height="280dp"
-            android:layout_marginBottom="104dp"
+            android:layout_marginBottom="128dp"
             app:cardCornerRadius="16dp"
             app:cardElevation="16dp"
             app:cardUseCompatPadding="true"
@@ -30,15 +31,16 @@
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:background="@color/white"
                     android:id="@+id/imageView"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
+                    android:background="@color/white"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="1.0"
                     app:srcCompat="@drawable/image_upload" />
 
 
@@ -51,7 +53,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="24dp"
-            android:layout_marginBottom="-16dp"
+            android:layout_marginBottom="8dp"
             app:cardCornerRadius="16dp"
             app:cardElevation="16dp"
             app:cardUseCompatPadding="true"
@@ -65,8 +67,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/blue"
-                android:text="Upload"
                 android:foreground="?attr/selectableItemBackground"
+                android:text="Upload"
                 android:textAllCaps="true"
                 android:textStyle="bold" />
 
@@ -87,26 +89,25 @@
             app:layout_constraintStart_toStartOf="parent">
 
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/showAllBtn"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/light_blue"
-                android:text="Show All"
-                android:foreground="?attr/selectableItemBackground"
-                android:textAllCaps="true"
-                android:textStyle="bold" />
+            <!--            <androidx.appcompat.widget.AppCompatButton-->
+            <!--                android:id="@+id/showAllBtn"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="match_parent"-->
+            <!--                android:background="@color/light_blue"-->
+            <!--                android:text="Show All"-->
+            <!--                android:foreground="?attr/selectableItemBackground"-->
+            <!--                android:textAllCaps="true"-->
+            <!--                android:textStyle="bold" />-->
 
         </com.google.android.material.card.MaterialCardView>
 
 
-
         <ProgressBar
             android:id="@+id/progressBar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="gone"
+            android:layout_width="74dp"
+            android:layout_height="62dp"
             android:indeterminateTint="@color/light_blue"
+            android:visibility="gone"
             app:layout_constraintBottom_toTopOf="@+id/materialCardView2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"

@@ -28,14 +28,14 @@ import retrofit2.Callback
 import retrofit2.Response
 import java.util.Calendar
 
-class MainActivity : AppCompatActivity(), OnBackPressedListener {
+class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
     lateinit var firebaseAuth: FirebaseAuth
     lateinit var stdlist : List<String>
     lateinit var recyclerView : RecyclerView
     lateinit var rollAdapter: RollAdapter
     private var doubleBackToExitPressedOnce = false
-    private var onBackPressedListener: OnBackPressedListener? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -57,9 +57,6 @@ class MainActivity : AppCompatActivity(), OnBackPressedListener {
 
         }
 
-        fun setOnBackPressedListener(listener: OnBackPressedListener?) {
-            onBackPressedListener = listener
-        }
     }
     private  fun showFragment(fragment: Fragment){
         val transaction = supportFragmentManager.beginTransaction()
@@ -68,6 +65,4 @@ class MainActivity : AppCompatActivity(), OnBackPressedListener {
 //        transaction.disallowAddToBackStack()
         transaction.commit()
         }
-
-
 }

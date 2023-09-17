@@ -3,6 +3,7 @@ package com.example.mentorsapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import com.example.mentorsapp.databinding.ActivityStudentpageBinding
 import retrofit2.Call
@@ -36,7 +37,7 @@ class StudentPage : AppCompatActivity() {
                                         binding.nametV.text = student.name
                                         binding.addresstV.text = student.permadd
                                         binding.dob.text= student.dob
-                                        binding.fatherno.text = student.fatherno.toString()
+//                                        binding.fatherno.text = student.fatherno.toString()
                                         binding.stdmail.text= student.stdmail
                         }
                     }
@@ -45,6 +46,7 @@ class StudentPage : AppCompatActivity() {
 
                 override fun onFailure(call: Call<StudentDetails>, t: Throwable) {
                     Toast.makeText(this@StudentPage,"Error : ${t.localizedMessage}", Toast.LENGTH_LONG).show()
+                    Log.e("err","ERROR :${t.localizedMessage.toString()}")
                 }
 
             })

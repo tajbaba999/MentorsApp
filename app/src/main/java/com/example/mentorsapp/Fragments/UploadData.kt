@@ -10,6 +10,8 @@ import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.fragment.app.activityViewModels
+import com.example.mentorsapp.MentorViewModel
 import com.example.mentorsapp.R
 import com.example.mentorsapp.R.layout
 
@@ -17,6 +19,7 @@ class UploadData : Fragment() {
 
     private lateinit var autoCompleteTextView: AutoCompleteTextView
     private lateinit var adapterItems : ArrayAdapter<String>
+    private val mentorViewModel : MentorViewModel by activityViewModels<> {  }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,6 +44,8 @@ class UploadData : Fragment() {
             handleItemSelected(selectedItem)
         }
         return view
+
+
     }
 
     private fun handleItemSelected(selectedItem: String) {

@@ -4,91 +4,251 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Fragments.Profile">
+    tools:context=".Fragments.Profile"
+    android:background="@color/white">
 
-    <androidx.cardview.widget.CardView
+<!--    <androidx.cardview.widget.CardView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:cardCornerRadius="35dp"-->
+<!--        app:cardElevation="3dp"-->
+<!--        app:cardUseCompatPadding="true"-->
+<!--        tools:ignore="MissingConstraints"-->
+<!--        tools:layout_editor_absoluteX="1dp"-->
+<!--        android:layout_weight="0">-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="380dp"-->
+<!--            android:layout_height="245dp"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="230dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:orientation="vertical">-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/greetings"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="44dp"-->
+<!--                    android:layout_marginLeft="10sp"-->
+<!--                    android:layout_marginTop="20dp"-->
+<!--                    android:text="Greetings"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="25sp" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/name"-->
+<!--                    android:layout_width="216dp"-->
+<!--                    android:layout_height="38dp"-->
+<!--                    android:layout_marginLeft="10dp"-->
+<!--                    android:text="Name"-->
+<!--                    android:textAlignment="textStart"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="20sp" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/desg"-->
+<!--                    android:layout_width="220dp"-->
+<!--                    android:layout_height="43dp"-->
+<!--                    android:layout_marginLeft="10dp"-->
+<!--                    android:gravity="center"-->
+<!--                    android:text="Designation"-->
+<!--                    android:textAlignment="textStart"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="20sp"-->
+<!--                    tools:ignore="RtlCompat" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/emailfirebase"-->
+<!--                    android:layout_width="230dp"-->
+<!--                    android:layout_height="43dp"-->
+<!--                    android:layout_marginLeft="10dp"-->
+<!--                    android:gravity="center"-->
+<!--                    android:text="Mailid"-->
+<!--                    android:textAlignment="textStart"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="20sp"-->
+<!--                    tools:ignore="RtlCompat" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/phone"-->
+<!--                    android:layout_width="217dp"-->
+<!--                    android:layout_height="42dp"-->
+<!--                    android:layout_marginLeft="10dp"-->
+<!--                    android:gravity="center"-->
+<!--                    android:text="Phone"-->
+<!--                    android:textAlignment="textStart"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="20sp"-->
+<!--                    tools:ignore="RtlCompat" />-->
+
+<!--            </LinearLayout>-->
+
+<!--        </LinearLayout>-->
+
+
+
+
+<!--    </androidx.cardview.widget.CardView>-->
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="35dp"
-        app:cardElevation="3dp"
-        app:cardUseCompatPadding="true"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="1dp"
-        android:layout_weight="0">
+        android:layout_height="match_parent" >>
 
-        <LinearLayout
-            android:layout_width="380dp"
-            android:layout_height="245dp"
-            android:orientation="horizontal">
+
 
             <LinearLayout
-                android:layout_width="230dp"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/greetings"
-                    android:layout_width="wrap_content"
-                    android:layout_height="44dp"
-                    android:layout_marginLeft="10sp"
-                    android:layout_marginTop="20dp"
-                    android:text="Greetings"
-                    android:textColor="@color/black"
-                    android:textSize="25sp" />
 
-                <TextView
-                    android:id="@+id/name"
-                    android:layout_width="216dp"
-                    android:layout_height="38dp"
-                    android:layout_marginLeft="10dp"
-                    android:text="Name"
-                    android:textAlignment="textStart"
-                    android:textColor="@color/black"
-                    android:textSize="20sp" />
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-                <TextView
-                    android:id="@+id/desg"
-                    android:layout_width="220dp"
-                    android:layout_height="43dp"
-                    android:layout_marginLeft="10dp"
-                    android:gravity="center"
-                    android:text="Designation"
-                    android:textAlignment="textStart"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    tools:ignore="RtlCompat" />
+                    <ImageView
+                        android:id="@+id/ImageView"
+                        android:layout_width="412dp"
+                        android:layout_height="354dp"
+                        android:src="@drawable/backgorund_profile"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/emailfirebase"
-                    android:layout_width="230dp"
-                    android:layout_height="43dp"
-                    android:layout_marginLeft="10dp"
-                    android:gravity="center"
-                    android:text="Mailid"
-                    android:textAlignment="textStart"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    tools:ignore="RtlCompat" />
+                    <ImageView
+                        android:id="@+id/imageView6"
+                        android:layout_width="@dimen/_170sdp"
+                        android:layout_height="@dimen/_170sdp"
+                        android:src="@drawable/top_profile_background"
+                        app:layout_constraintBottom_toBottomOf="@+id/ImageView"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/ImageView"
+                        app:layout_constraintVertical_bias="0.345" />
 
-                <TextView
-                    android:id="@+id/phone"
-                    android:layout_width="217dp"
-                    android:layout_height="42dp"
-                    android:layout_marginLeft="10dp"
-                    android:gravity="center"
-                    android:text="Phone"
-                    android:textAlignment="textStart"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    tools:ignore="RtlCompat" />
+                    <TextView
+                        android:id="@+id/emailidprofile"
+                        android:layout_width="99dp"
+                        android:layout_height="39dp"
+                        android:gravity="center"
+                        android:text="Email"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_23sdp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView6"
+                        app:layout_constraintVertical_bias="0.07" />
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Name : "
+                        android:textStyle="bold"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_22sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.08"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ImageView"
+                        app:layout_constraintVertical_bias="0.118" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Phone : "
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_22sdp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.079"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ImageView"
+                        app:layout_constraintVertical_bias="0.359" />
+
+                    <TextView
+                        android:id="@+id/phonenumberprofile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="phone number"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_17sdp"
+                        android:textStyle="normal"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.646"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ImageView"
+                        app:layout_constraintVertical_bias="0.374" />
+
+                    <TextView
+                        android:id="@+id/textView9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="section : "
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_22sdp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.081"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ImageView"
+                        app:layout_constraintVertical_bias="0.58" />
+
+                    <TextView
+                        android:id="@+id/secfiletionpro"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="section"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_18sdp"
+                        android:textStyle="normal"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.519"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ImageView"
+                        app:layout_constraintVertical_bias="0.587" />
+
+                    <TextView
+                        android:id="@+id/mentornameprofile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mentor Name"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_18sdp"
+                        android:textStyle="normal"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.646"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ImageView"
+                        app:layout_constraintVertical_bias="0.113" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
             </LinearLayout>
 
-        </LinearLayout>
 
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-
-    </androidx.cardview.widget.CardView>
 
 </FrameLayout>

@@ -31,7 +31,7 @@
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageViewData"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:background="@color/white"

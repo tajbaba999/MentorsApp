@@ -6,37 +6,176 @@
     tools:context=".Fragments.UploadData"
     android:background="@color/white">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:background="@color/white">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-       <androidx.coordinatorlayout.widget.CoordinatorLayout
-           android:layout_width="match_parent"
-           android:layout_height="match_parent"
-           android:background="@color/white">
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"/>
 
-           <com.google.android.material.textfield.TextInputLayout
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:layout_margin="@dimen/_16sdp"
-               android:background="@color/light_blue"
-               style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu">
-               
+            <TextView
+                style="@style/ShapeAppearance.Material3.Corner.Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_25sdp"
+                android:layout_marginLeft="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:text="Select the student rollnumber"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="bold" />
 
-               <AutoCompleteTextView
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_22sdp"
+                android:layout_marginEnd="@dimen/_32sdp"
                 android:background="@color/light_blue"
-                   android:id="@+id/autoCompleteTextView"
-                   android:inputType="none"
-                   android:layout_width="match_parent"
-                   android:layout_height="wrap_content">
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu">
 
-               </AutoCompleteTextView>
-           </com.google.android.material.textfield.TextInputLayout>
 
-       </androidx.coordinatorlayout.widget.CoordinatorLayout>
+                <AutoCompleteTextView
+                    android:background="@color/light_blue"
+                    android:id="@+id/autoCompleteTVrollNumber"
+                    android:inputType="none"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-    </LinearLayout>
+                </AutoCompleteTextView>
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white">
+
+                <TextView
+                    style="@style/ShapeAppearance.Material3.Corner.Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_25sdp"
+                    android:layout_marginLeft="@dimen/_16sdp"
+                    android:text="Select Fee Type"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="@dimen/_18sdp"
+                    android:textSize="@dimen/_10sdp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_32sdp"
+                    android:layout_marginStart="@dimen/_22sdp"
+                    android:layout_marginEnd="@dimen/_32sdp"
+                    android:background="@color/light_blue"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu">
+
+
+                    <AutoCompleteTextView
+                        android:background="@color/light_blue"
+                        android:id="@+id/autoCompleteTVFeeType"
+                        android:inputType="none"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    </AutoCompleteTextView>
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white">
+
+                <TextView
+                    style="@style/ShapeAppearance.Material3.Corner.Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_25sdp"
+                    android:layout_marginLeft="@dimen/_16sdp"
+                    android:text="Select Year"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="@dimen/_18sdp"
+                    android:textSize="@dimen/_10sdp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_32sdp"
+                    android:layout_marginStart="@dimen/_22sdp"
+                    android:layout_marginEnd="@dimen/_32sdp"
+                    android:background="@color/light_blue"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu">
+
+
+                    <AutoCompleteTextView
+                        android:background="@color/light_blue"
+                        android:id="@+id/autoCompleteTVyear"
+                        android:inputType="none"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    </AutoCompleteTextView>
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white">
+
+                <TextView
+                    style="@style/ShapeAppearance.Material3.Corner.Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_25sdp"
+                    android:layout_marginLeft="@dimen/_16sdp"
+                    android:text="Select SEM"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="@dimen/_18sdp"
+                    android:textSize="@dimen/_10sdp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_32sdp"
+                    android:layout_marginStart="@dimen/_22sdp"
+                    android:layout_marginEnd="@dimen/_32sdp"
+                    android:background="@color/light_blue"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu">
+
+
+                    <AutoCompleteTextView
+                        android:background="@color/light_blue"
+                        android:id="@+id/autoCompleteSem"
+                        android:inputType="none"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    </AutoCompleteTextView>
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
 
 
 </FrameLayout>

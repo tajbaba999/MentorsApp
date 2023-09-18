@@ -5,6 +5,7 @@ package com.example.mentorsapp.Fragments
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.os.Handler
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -31,6 +32,7 @@ import retrofit2.Response
 import java.util.Calendar
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.LiveData
 import com.facebook.shimmer.ShimmerFrameLayout
 
 class HomeFragment : Fragment() {
@@ -62,18 +64,15 @@ class HomeFragment : Fragment() {
 
          recyclerView = view.findViewById(R.id.recyclerView)
 
+
+
 //         stdlist = listOf("studnet1","studnet2")
 //         rollAdapter = RollAdapter(stdlist)
 //         recyclerView.adapter = rollAdapter
 
 
 
-         mentorViewModel.getStudnetData().observe(viewLifecycleOwner, Observer {newdata ->
-             newdata?.let {
-                 rollAdapter = RollAdapter(it)
-                 recyclerView.adapter = rollAdapter
-             }
-         })
+         val bundle = Bundle()
 
         if (user != null) {
             emailfire.text = user.email.toString()
@@ -117,6 +116,15 @@ class HomeFragment : Fragment() {
                                 rollAdapter = RollAdapter(newStudentData)
                                 recyclerView.adapter = rollAdapter
 
+
+
+                                bundle.putString("mailid",it.mailid)
+//                                bundle.putString("sec",it.sec)
+//                                bundle.putString("name",it.name)
+//                                bundle.putString("stdcnt", it.stdcnt.toString())
+//                                bundle.putString("phono",it.phono.toString())
+//                                bundle.putString("desg",it.desg)
+
 //                                stdlist= it.stdarr
 //                                val newStudentData = it.stdarr
 //                                mentorViewModel.clearStudnetData()
@@ -151,9 +159,24 @@ class HomeFragment : Fragment() {
         }
     ) }
 
+         val profilFragment = Profile()
+         profilFragment.arguments = bundle
+
+         mentorViewModel.getStudnetData().observe(viewLifecycleOwner, Observer {newdata ->
+             newdata?.let {
+                 rollAdapter = RollAdapter(it)
+                 recyclerView.adapter = rollAdapter
+             }
+         })
+
+//            mentorViewModel.getStudnetData().observe(viewLifecycleOwner, Observer { data ->
+//                Log.d("LiveData", "$data")
+//            })
+
          recyclerView.layoutManager = LinearLayoutManager(requireContext())
          originalStdList = stdlist
 
+         Log.e("list","${mentorViewModel.getStudnetData()}")
 
          search.setOnQueryTextListener(object  : SearchView.OnQueryTextListener {
              override fun onQueryTextSubmit(query: String?): Boolean {
@@ -181,16 +204,20 @@ class HomeFragment : Fragment() {
     }
 
     private fun updateRecyclerView(filteredStdList: List<String>) {
-         this.filteredStdList =filteredStdList
+//         this.filteredStdList =filteredStdList
          rollAdapter.updateData(filteredStdList)
     }
 
     private fun filterList(query : String?): List<String> {
-        if (query != null){
-            return originalStdList.filter { it.contains(query, ignoreCase = true) }
-
+//        if (query != null){
+//            return originalStdList.filter { it.contains(query, ignoreCase = true) }
+//
+//        }
+//        return originalStdList
+        if (query != null) {
+            return stdlist.filter { it.contains(query, ignoreCase = true) }
         }
-        return originalStdList
+        return stdlist
     }
 
 }

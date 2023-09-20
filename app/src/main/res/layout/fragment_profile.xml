@@ -93,7 +93,8 @@
 <!--    </androidx.cardview.widget.CardView>-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >>
+        android:layout_height="match_parent"
+        tools:ignore="ExtraText">>
 
 
 
@@ -134,7 +135,7 @@
                         android:layout_height="39dp"
                         android:gravity="center"
                         android:text="Email"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
                         android:textSize="@dimen/_23sdp"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"

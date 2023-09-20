@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    app:cardBackgroundColor="@color/purple_500"
+    app:cardBackgroundColor="#6672ff"
     app:cardCornerRadius="20dp"
     app:cardElevation="1dp"
     app:cardUseCompatPadding="true"
@@ -51,7 +51,7 @@
            >
 
            <Button
-               android:foreground="@color/purple_500"
+               android:foreground="#6672ff"
                android:id="@+id/bottmsheet"
                style="?attr/materialIconButtonStyle"
                android:layout_width="wrap_content"
